@@ -8,8 +8,8 @@ import time
 
 
 class BehanceBot():
-    def __init__(self, email, password):
-        self.browser = webdriver.Chrome(executable_path='D:\chromedriver.exe')
+    def __init__(self, email, password, driver_path):
+        self.browser = webdriver.Chrome(executable_path=driver_path)
         self.email = email
         self.password = password
 
@@ -42,7 +42,7 @@ class BehanceBot():
 
 
 def main():
-    bot = BehanceBot(config.email, config.password)
+    bot = BehanceBot(config.email, config.password, config.driver_path)
     bot.home_page()
     bot.sign_in()
 
